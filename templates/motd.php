@@ -1,0 +1,1 @@
+<div id="motd"><?php include "data/motd";?></div>

@@ -25,3 +25,9 @@ a {
     color: black;
     text-decoration: none;
 }
+#motd {
+    color: rgb(31, 31, 31);
+    padding: 3px;
+    outline-style: auto;
+    outline-color: rgb(27, 27, 27);
+}
