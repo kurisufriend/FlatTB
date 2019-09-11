@@ -1,0 +1,27 @@
+body {
+    background-color: azure;
+}
+.infobox {
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+#header {
+    background-color: rgb(153, 185, 255);
+    border-radius: 10px;
+    padding: 10px 0px;
+    text-align: center;
+/*    display: inline-block;*/
+    
+}
+#header-banner {
+    background-color: rgb(126, 103, 255);
+}
+#latest {
+    float: right;
+}
+a {
+    color: black;
+    text-decoration: none;
+}

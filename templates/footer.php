@@ -1,0 +1,1 @@
+<hr><a href="mailto:admin@sidekek.ml">admin@sidekek.ml</a>
