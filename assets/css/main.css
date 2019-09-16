@@ -40,3 +40,22 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+#op {
+    margin: 0% 25% 0% 25%;
+    background-color: rgb(127, 127, 225);
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    color: black;
+    width: 50%;
+}
+#banner {
+    background-color: rgb(179, 179, 233);
+    padding: 3px;
+}
+#report {
+    float: right;
+    color: black;
+    background-color: white;
+    padding: 0px;
+}
