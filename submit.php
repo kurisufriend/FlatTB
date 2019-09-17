@@ -18,7 +18,7 @@ $board = $_POST['board'];
 
 // get/generate other variables
 $postid = get_postid();
-$timestamp = date("m") . "/" . date("j") . "/" . date("Y") . "(" . date("D") . ")" . date("g") . ":" . date("i") . ":" . date("s");
+$timestamp = date("m/j/Y(D)G:i:s");
 $op = false;
 
 // hash our tripcode
