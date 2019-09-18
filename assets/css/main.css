@@ -8,6 +8,7 @@ body {
     display: inline-block;
 }
 #header {
+    margin: 0px 0px 10px 0px;
     background-color: rgb(153, 185, 255);
     border-radius: 10px;
     padding: 10px 0px;
@@ -67,4 +68,7 @@ a {
     padding: 10px;
     color: black;
     width: 50%;
+}
+.center {
+    text-align: center;
 }

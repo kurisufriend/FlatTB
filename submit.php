@@ -43,7 +43,10 @@ $subject = str_replace('"', '', $subject);
 $subject = str_replace('\'', '', $subject);
 $subject = str_replace('>', '', $subject);
 $subject = str_replace('<', '', $subject);
-$subject = str_replace(' ', '_', $subject);
+$subject = str_replace(' ', '&_', $subject);
+// sanitize the body for csv (we'll re-replace these after)
+$body = str_replace(',', '&comma', $body);
+$body = preg_replace("/\r\n|\r|\n/", '<br/>', $body);
 // create post directory and index.php
 // if board directory does not exist and is in approved_boards, make new board directory
 if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
@@ -51,12 +54,20 @@ if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
 }
 // make thread directory if it does not already exist
 if (!is_dir("content/" . $board . "/" . $subject)) {
+    $op = true;
     mkdir("content/" . $board . "/" . $subject);
     file_put_contents("content/" . $board . "/" . $subject . "/index.php", ""); // create file with nothing in
-    $op = true;
+    file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv", "");
+    file_put_contents("content/" . $board . "/" . $subject . "/index.php",file_get_contents("templates/post.php"), FILE_APPEND); // the file_get_contents is a hack, but it's probably better than include
 }
-// if poster is OP then setup file
+// if poster is OP then add to csv
 if ($op == true) {
-    file_put_contents(("content/" . $board . "/" . $subject . "/index.php"),"<?php include \"templates/post_top.php\";?>", FILE_APPEND);
+    file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","op," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND); // format is type, title, name, trip, date, id, body
 }
+else {
+    file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);
+}
+increment_postid();
+header("Location: " . $root . "content/" . $board . "/" . $subject);
+die();
 ?>
