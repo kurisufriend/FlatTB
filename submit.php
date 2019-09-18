@@ -13,6 +13,8 @@ include_once "lib/postid.php";
 $name = $_POST['name'];
 $subject = $_POST['subject'];
 $body = $_POST['body'];
+$body = htmlspecialchars($body); // clean up body
+$latest = $body; // ew
 $tripcode = $_POST['trip'];
 $board = $_POST['board'];
 
@@ -67,7 +69,10 @@ if ($op == true) {
 else {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);
 }
+// update latest
+file_put_contents("data/latest", $latest);
 increment_postid();
+// redirect to thread and die
 header("Location: " . $root . "content/" . $board . "/" . $subject);
 die();
 ?>
