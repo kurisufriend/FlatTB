@@ -16,6 +16,8 @@ echo "<title>" . $boards[0][1] . "</title>";
 <?php
 foreach ($boards as $lines) {
     $lines[6] = str_replace('&comma', ',', $lines[6]);
+    $lines[2] = str_replace('&comma', ',', $lines[2]);
+    $lines[1] = str_replace('&comma', ',', $lines[1]);
     if ($lines[0] == "op") {
         echo "<div id='op'>
         <h1 class='center'>" . $lines[1] . "</h1>

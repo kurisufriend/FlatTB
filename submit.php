@@ -8,6 +8,7 @@
 include_once "data/config.php";
 include_once "lib/tripcode.php";
 include_once "lib/postid.php";
+include_once "lib/sanitize.php";;
 
 // get POST data
 $name = $_POST['name'];
@@ -46,9 +47,10 @@ $subject = str_replace('\'', '', $subject);
 $subject = str_replace('>', '', $subject);
 $subject = str_replace('<', '', $subject);
 $subject = str_replace(' ', '&_', $subject);
-// sanitize the body for csv (we'll re-replace these after)
-$body = str_replace(',', '&comma', $body);
-$body = preg_replace("/\r\n|\r|\n/", '<br/>', $body);
+// sanitize the everything for csv (we'll re-replace these after)
+$body = csv_encode($body);
+$name = csv_encode($name);
+$subject = csv_encode($subject);
 // create post directory and index.php
 // if board directory does not exist and is in approved_boards, make new board directory
 if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
