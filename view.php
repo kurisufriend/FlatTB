@@ -14,6 +14,7 @@ if (!is_dir("content/" . $board . "/" . $thread)) {
 <?php include_once "templates/head.php"; ?>
 </head>
 <body>
+<?php include_once "templates/header.php"; ?>
 <?php
 $info = array_map("str_getcsv", file("content/" . $board . "/" . $thread . "/threadinfo.csv"));
 foreach ($info as $posts) {
