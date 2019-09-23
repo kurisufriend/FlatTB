@@ -22,19 +22,19 @@ foreach ($info as $posts) {
     $posts[2] = str_replace('&comma', ',', $posts[2]);
     $posts[1] = str_replace('&comma', ',', $posts[1]);
     if ($posts[0] == "op") {
-        echo "<div id='op'>
+        echo "<div id='op'><div id='" . $posts[5] . "'>
         <h1 class='center'>" . $posts[1] . "</h1>
         <div id='banner'><b>" . $posts[2] . "</b>!" . $posts[3] . "  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a></div>
         <hr>
         " . $posts[6] . "
-    </div>";
+    </div></div>";
     }
     elseif ($posts[0] == "reply") {
-        echo "<div id='post'>
+        echo "<div id='post'><div id='" . $posts[5] . "'>
         <div id='banner'><b>" . $posts[2] . "</b>!" . $posts[3] . "  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a></div>
         <hr>
         " . $posts[6] . "
-    </div>";
+    </div></div>";
     }
 }
 ?>
