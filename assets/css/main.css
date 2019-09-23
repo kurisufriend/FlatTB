@@ -33,7 +33,7 @@ a {
     outline-color: rgb(27, 27, 27);
 }
 #postform {
-    text-align: center;
+    /*text-align: center;*/
     margin: 0;
     position: absolute;
     top: 50%;
@@ -71,4 +71,9 @@ a {
 }
 .center {
     text-align: center;
+}
+.tableEntry {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(0, 206, 206);
 }
