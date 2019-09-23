@@ -62,17 +62,18 @@ if (!is_dir("content/" . $board . "/" . $subject)) {
     mkdir("content/" . $board . "/" . $subject);
     file_put_contents("content/" . $board . "/" . $subject . "/index.php", ""); // create file with nothing in
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv", "");
-    file_put_contents("content/" . $board . "/" . $subject . "/index.php",file_get_contents("templates/post.php"), FILE_APPEND); // the file_get_contents is a hack, but it's probably better than include
 }
 // if poster is OP then add to csv
 if ($op == true) {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","op," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND); // format is type, title, name, trip, date, id, body
+    file_put_contents("data/globalcatalog.csv", $board . "," . $subject . "," . $timestamp . "\n", FILE_APPEND);
 }
 else {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);
 }
 // update latest
 file_put_contents("data/latest", $latest);
+// update catalog
 increment_postid();
 // redirect to thread and die
 header("Location: " . $root . "view.php?board=" . $board . "&thread=" . urlencode($subject));
