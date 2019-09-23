@@ -75,6 +75,6 @@ else {
 file_put_contents("data/latest", $latest);
 increment_postid();
 // redirect to thread and die
-header("Location: " . $root . "content/" . $board . "/" . $subject);
+header("Location: " . $root . "view.php?board=" . $board . "&thread=" . urlencode($subject));
 die();
 ?>
