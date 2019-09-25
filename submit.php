@@ -56,6 +56,9 @@ $subject = csv_encode($subject);
 if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
     mkdir("content/" . $board);
 }
+if (!in_array($board, $approved_boards)) {
+    die();
+}
 // make thread directory if it does not already exist
 if (!is_dir("content/" . $board . "/" . $subject)) {
     $op = true;
