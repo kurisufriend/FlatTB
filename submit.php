@@ -11,8 +11,8 @@ include_once "lib/postid.php";
 include_once "lib/sanitize.php";;
 
 // get POST data
-$name = $_POST['name'];
-$subject = $_POST['subject'];
+$name = htmlspecialchars($_POST['name']);
+$subject = htmlspecialchars($_POST['subject']);
 $body = $_POST['body'];
 $body = htmlspecialchars($body); // clean up body
 $latest = $body; // ew
