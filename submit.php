@@ -24,15 +24,17 @@ $postid = get_postid();
 $timestamp = date("m/j/Y(D)G:i:s");
 $op = false;
 
+// set name to Anonymous if not provided one already AND no tripcode
+if ($name == "" and $tripcode == "") {
+    $name = "Anonymous";
+}
+
 // hash our tripcode
 if (!$tripcode == "") {
     $tripcode = tripcode($tripcode, $salt);
     $tripcode = pretty_tripcode($tripcode);
 }
-// set name to Anonymous if not provided one already
-if ($name == "") {
-    $name = "Anonymous";
-}
+
 // make sure the "subject" entry was filled
 if ($subject == "") {
     die(); // kill the script; replace with suitable error message later
