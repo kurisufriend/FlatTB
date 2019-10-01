@@ -8,7 +8,8 @@
 include_once "data/config.php";
 include_once "lib/tripcode.php";
 include_once "lib/postid.php";
-include_once "lib/sanitize.php";;
+include_once "lib/sanitize.php";
+include_once "lib/text.php";
 
 // get POST data
 $name = htmlspecialchars($_POST['name']);
@@ -53,6 +54,9 @@ $subject = str_replace(' ', '&_', $subject);
 $body = csv_encode($body);
 $name = csv_encode($name);
 $subject = csv_encode($subject);
+// filter body from csv
+$body = filter_fromcsv($body);
+// point of no return
 // create post directory and index.php
 // if board directory does not exist and is in approved_boards, make new board directory
 if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
