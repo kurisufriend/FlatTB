@@ -49,7 +49,7 @@ $subject = str_replace('\'', '', $subject);
 $subject = str_replace('>', '', $subject);
 $subject = str_replace('<', '', $subject);
 $subject = str_replace(' ', '&_', $subject);
-// sanitize the everything for csv (we'll re-replace these after)
+// sanitize everything for csv (we'll re-replace these after)
 $body = csv_encode($body);
 $name = csv_encode($name);
 $subject = csv_encode($subject);
