@@ -56,6 +56,7 @@ $name = csv_encode($name);
 $subject = csv_encode($subject);
 // filter body from csv
 $body = filter_fromcsv($body);
+$latest = $body;
 // point of no return
 // create post directory and index.php
 // if board directory does not exist and is in approved_boards, make new board directory
