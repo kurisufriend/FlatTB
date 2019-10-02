@@ -2,7 +2,7 @@
 require_once "data/config.php";
 
 function tripcode($input, $salt) {
-    $hash = hash("sha512",$input . $salt);
+    $hash = hash("sha512",$input . $salt . $input[0]);
     $out = base64_encode($hash);
     return $out;
 }
