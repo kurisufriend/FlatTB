@@ -21,6 +21,7 @@ foreach ($info as $posts) {
     $posts[6] = str_replace('&comma', ',', $posts[6]);
     $posts[2] = str_replace('&comma', ',', $posts[2]);
     $posts[1] = str_replace('&comma', ',', $posts[1]);
+    $posts[1] = rawurldecode($posts[1]);
     if ($posts[0] == "op") {
         echo "<div id='op'><div id='" . $posts[5] . "'>
         <h1 class='center'>" . $posts[1] . "</h1>
