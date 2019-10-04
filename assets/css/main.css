@@ -21,6 +21,8 @@ body {
 }
 #latest {
     float: right;
+    max-width: 500px;
+    word-break: break-all;
 }
 a {
     color: black;
@@ -49,6 +51,7 @@ a {
     display: inline-block;
     color: black;
     width: 50%;
+    word-break: break-all;
 }
 #banner {
     background-color: rgb(158, 159, 250);
@@ -68,6 +71,7 @@ a {
     padding: 10px;
     color: black;
     width: 50%;
+    word-break: break-all;
 }
 .center {
     text-align: center;
