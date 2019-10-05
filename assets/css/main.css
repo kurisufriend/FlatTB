@@ -93,3 +93,6 @@ a {
 #boards {
     float: left;
 }
+#banner br {
+    display: none;
+}

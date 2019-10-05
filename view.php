@@ -24,15 +24,15 @@ foreach ($info as $posts) {
     $posts[1] = rawurldecode($posts[1]);
     if ($posts[0] == "op") {
         echo "<div id='op'><div id='" . $posts[5] . "'>
-        <h1 class='center'>" . $posts[1] . "</h1>
-        <div id='banner'><b>" . $posts[2] . "</b><i>!" . $posts[3] . "</i>  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a></div>
+        <h1 class='center' id='header-subject'>" . $posts[1] . "</h1>
+        <div id='banner'><b>" . $posts[2] . "</b><i>!" . $posts[3] . "</i>  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a><br></div>
         <hr>
         " . $posts[6] . "
     </div></div>";
     }
     elseif ($posts[0] == "reply") {
         echo "<div id='post'><div id='" . $posts[5] . "'>
-        <div id='banner'><b>" . $posts[2] . "</b><i>!" . $posts[3] . "</i>  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a></div>
+        <div id='banner'><b>" . $posts[2] . "</b><i>!" . $posts[3] . "</i>  " . $posts[4] . "  No." . $posts[5] . "<a id='report' href='localhost/report.php?id=" . $posts[5] . "'>Report</a><br></div>
         <hr>
         " . $posts[6] . "
     </div></div>";

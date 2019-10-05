@@ -1,0 +1,76 @@
+body {
+	background: #ffe url('../images/fade-yotsuba.png') repeat-x 50% 0%;
+	color: #800000;
+}
+a:link, a:visited, .intro a.email span.name {
+	color: #0000ff;
+}
+a:link:hover {
+	color: #d00;
+}
+#post-no {
+	color: #800000;
+}
+#post {
+	background: #f0e0d6;
+	border-color: #d9bfb7;
+}
+div.post.reply.highlighted {
+	background: #f0c0b0;
+	border-color: #d9bfb7;
+}
+#post a {
+	color: navy;
+}
+.intro span.subject {
+	color: #d00;
+}
+form table tr th {
+	background: #EA8;
+}
+div.ban h2 {
+	background: #FCA;
+	color: inherit;
+}
+div.ban {
+	border-color: #800;
+}
+div.ban p {
+	color: black;
+}
+div.pages {
+	background: #F0E0D6;
+	border-color: #D9BFB7;
+}
+div.pages a.selected {
+	color: #800;
+}
+hr {
+	border-color: #D9BFB7;
+}
+div.boardlist {
+	color: #B86;
+}
+div.boardlist a {
+	color: #800;
+}
+table.modlog tr th {
+	background: #EA8;
+}
+#post hr {
+    display: none;
+}
+/* options.js */
+#options_div, #alert_div {
+	background: #f0e0d6;
+}
+
+.desktop-style div.boardlist:nth-child(1) {
+	background-color: #F0E0D6;
+}
+.center {
+    text-align: center;
+}
+#header-subject {
+    font-weight: normal;
+}
