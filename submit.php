@@ -10,6 +10,7 @@ include_once "lib/tripcode.php";
 include_once "lib/postid.php";
 include_once "lib/sanitize.php";
 include_once "lib/text.php";
+include_once "lib/db.php";
 
 // get POST data
 $name = htmlspecialchars($_POST['name']);
@@ -76,7 +77,7 @@ if (!is_dir("content/" . $board . "/" . $subject)) {
 // if poster is OP then add to csv
 if ($op == true) {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","op," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND); // format is type, title, name, trip, date, id, body
-    file_put_contents("data/globalcatalog.csv", $board . "," . $subject . "," . $timestamp . "\n", FILE_APPEND);
+    csv_add_top("data/globalcatalog.csv", $board . "," . $subject . "," . $timestamp . "\n");
 }
 else {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);
