@@ -23,6 +23,8 @@ body {
     float: right;
     max-width: 500px;
     word-break: break-all;
+    max-height: 500px;
+    overflow: hidden;
 }
 a {
     color: black;
