@@ -11,13 +11,6 @@ include_once "lib/postid.php";
 include_once "lib/sanitize.php";
 include_once "lib/text.php";
 include_once "lib/db.php";
-include_once "lib/ban.php";
-
-// ban check
-if (ban_check()) {
-    header("Location: " . $root . "ban.php");
-    die();
-}
 
 // get POST data
 $name = htmlspecialchars($_POST['name']);
