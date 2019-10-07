@@ -1,0 +1,28 @@
+<?php
+include_once "data/config.php";
+if (!isset($board)) {
+    $board = "";
+}
+$catalog = array_map("str_getcsv", file("content/" . $board . "/catalog.csv"));
+$boards = array_map("str_getcsv", file("data/boardinfo.csv"));
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<?php include_once "templates/head.php"; ?>
+</head>
+<body>
+<?php include_once "templates/header.php"; ?>
+<h2 class="center"><?php echo $board; ?></h2>
+<div id='boardcatalog' class='center'><table>
+<th>Title</th>
+<th>Post</th>
+<th>Time</th>
+<?php
+foreach ($catalog as $post) {
+    echo "<tr><div class='catalogbox'><td>" . $post[1] . "</td><td>" . $post[2] . "</td><td>" . $post[3] . "</td></div></tr>";
+}
+?>
+</table></div>
+</body>
+</html>

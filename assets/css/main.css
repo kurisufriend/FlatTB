@@ -98,3 +98,17 @@ a {
 #banner br {
     display: none;
 }
+#boardcatalog {
+    width: 99%;
+    border-radius: 15px;
+    background-color: rgba(0, 255, 255, 0.65);
+    padding: 5px;
+}
+.catalogbox {
+    margin: 3px 0px 3px 0px;
+    background-color: rgba(0, 255, 255, 0.623);
+    overflow: hidden;
+}
+#boardcatalog table {
+    width: 100%;
+}

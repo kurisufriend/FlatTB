@@ -63,6 +63,7 @@ $latest = $body;
 // if board directory does not exist and is in approved_boards, make new board directory
 if (!is_dir("content/" . $board) and in_array($board, $approved_boards)) {
     mkdir("content/" . $board);
+    file_put_contents("content/" . $board . "/catalog.csv");
 }
 if (!in_array($board, $approved_boards)) {
     die();
@@ -77,7 +78,8 @@ if (!is_dir("content/" . $board . "/" . $subject)) {
 // if poster is OP then add to csv
 if ($op == true) {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","op," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND); // format is type, title, name, trip, date, id, body
-    csv_add_top("data/globalcatalog.csv", $board . "," . $subject . "," . $timestamp . "\n");
+    csv_add_top("data/globalcatalog.csv", $board . "," . $subject . "," . $timestamp . "\n"); // add data to global catalog
+    csv_add_top("content/" . $board . "/catalog.csv", $board . "," . $subject . "," . $body . "," . $timestamp . "\n"); // add data to local catalog
 }
 else {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);

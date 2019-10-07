@@ -1,3 +1,15 @@
+<?php
+$req = explode('?', $_SERVER['REQUEST_URI'], 2);
+
+$boards = array_map("str_getcsv", file("data/boardinfo.csv"));
+foreach ($boards as $lines) {
+    if ($req[0] == "/" . $lines[0]) {
+        $board = $lines[0];
+        include_once "templates/boardindex.php";
+        die();
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
