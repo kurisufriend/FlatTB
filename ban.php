@@ -1,4 +1,5 @@
 <?php
 $client = $_SERVER['REMOTE_ADDR'];
-echo $client;
+echo "IP Address: [" . $client. "]";
+
 ?>
