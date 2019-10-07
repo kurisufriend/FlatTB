@@ -1,9 +1,8 @@
 <?php
-$req = explode('?', $_SERVER['REQUEST_URI'], 2);
-
+$req = $_SERVER['REQUEST_URI'];
 $boards = array_map("str_getcsv", file("data/boardinfo.csv"));
 foreach ($boards as $lines) {
-    if ($req[0] == "/" . $lines[0]) {
+    if ($req == "/" . $lines[0]) {
         $board = $lines[0];
         include_once "templates/boardindex.php";
         die();
