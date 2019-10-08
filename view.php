@@ -12,6 +12,7 @@ if (!is_dir("content/" . $board . "/" . $thread)) {
 <html>
 <head>
 <?php include_once "templates/head.php"; ?>
+<meta http-equiv="Refresh" content="30">
 </head>
 <body>
 <?php include_once "templates/header.php"; ?>
