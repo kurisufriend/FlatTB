@@ -112,3 +112,6 @@ a {
 #boardcatalog table {
     width: 100%;
 }
+.roll {
+    color: red;
+}

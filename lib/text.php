@@ -6,5 +6,8 @@ function filter_fromcsv($haystack) {
     }
     return $haystack;
 }
-
+function roll_replace($input) {
+    $out = str_replace("+roll", "<b class='roll'>Roll: " . mt_rand(1,99) . "</b>", $input);
+    return $out;
+}
 ?>
