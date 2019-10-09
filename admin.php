@@ -11,7 +11,7 @@ if (isset($_POST['pass']) and isset($_POST['action']) and isset($_POST['arg'])) 
     } else { // actions
         if ($act == "ban") {
             file_put_contents("data/baninfo.csv", $arg . "\n", FILE_APPEND); // write given ip to ban file
-            echo $arg . " has been banned.";echo $pass . "\n" . $ph;
+            echo $arg . " has been banned.";
             die();
         }
         else {
