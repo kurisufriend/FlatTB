@@ -1,4 +1,5 @@
 <?php
+include_once "lib/sanitize.php";
 $req = $_SERVER['REQUEST_URI'];
 $boards = array_map("str_getcsv", file("data/boardinfo.csv"));
 foreach ($boards as $lines) {
@@ -24,7 +25,7 @@ foreach ($boards as $lines) {
 <b>Catalog:</b><br><?php include "templates/catalog.php";?>
             </div>
             <div id="latest" class="infobox">
-<b>Latest Post:</b><br><?php $root = file_get_contents("data/latest");echo $root;?>
+<b>Latest Post:</b><br><?php $root = file_get_contents("data/latest");echo csv_decode($root);?>
             </div>
         </div>
     </body>
