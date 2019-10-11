@@ -14,6 +14,11 @@ if (isset($_POST['pass']) and isset($_POST['action']) and isset($_POST['arg'])) 
             echo $arg . " has been banned.";
             die();
         }
+        elseif ($act == "motd") {
+            file_put_contents("data/motd", htmlspecialchars($arg));
+            echo "The MOTD is now:<br>" . $arg;
+            die();
+        }
         else {
             echo "Not supported.";
             die();
@@ -32,6 +37,7 @@ if (isset($_POST['pass']) and isset($_POST['action']) and isset($_POST['arg'])) 
 password: <input type="text" size="30" maxlength="120" name="pass"><br>
 <select name="action">
 <option value="ban">ban</option>
+<option value="motd">motd</option>
 <option value="delete">delete</option>
 </select><br>
 argument(s): <input type="text" size="50" name="arg"><br>
