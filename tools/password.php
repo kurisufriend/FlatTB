@@ -7,7 +7,7 @@ if (isset($_POST['pass'])) {
 }
 
 ?>
-<!DICTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 <form method="POST" action="#">
