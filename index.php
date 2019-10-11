@@ -3,7 +3,7 @@ include_once "lib/sanitize.php";
 $req = $_SERVER['REQUEST_URI'];
 $boards = array_map("str_getcsv", file("data/boardinfo.csv"));
 foreach ($boards as $lines) {
-    if ($req == "/" . $lines[0]) {
+    if ($req == "/" . $lines[0] or $req == "/" . $lines[0] . "/") {
         $board = $lines[0];
         include_once "templates/boardindex.php";
         die();
