@@ -9,7 +9,7 @@ if (!empty($catalog)) {
             break;
         }
         $post[1] = rawurldecode($post[1]);
-        $link = $root . "view.php?board=" . $post[0] . "&" . "thread=" . $post[1];
+        $link = $root . "view.php?board=" . $post[0] . "&" . "thread=" . urlencode(rawurlencode($post[1])); // shit temp fix
         echo "<tr><td>" . $post[0] . "</td>" . "<td><a href='" . $link . "'>" . $post[1] . "</a></td>" . "<td>" . $post[2] . "</td>" . "</tr>";
         $i++;
     }
