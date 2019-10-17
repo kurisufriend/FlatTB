@@ -18,7 +18,7 @@ $info = array_map("str_getcsv", file("content/" . $board . "/" . $thread . "/thr
 <body>
 <?php include_once "templates/header.php"; ?>
 <div id="collapsible-container">
-<div id="button-collapsible"><a id="button-collapsible-link" onclick="collapse();"href ="#">[REPLY]</a></div>
+<div id="button-collapsible"><a id="button-collapsible-link" onclick="collapse();" href ="#">[REPLY]</a></div>
 <div id="form-collapsible"><?php $subject = rawurldecode($info[0][1]);include_once "templates/form.php"; ?></div>
 </div>
 <?php
