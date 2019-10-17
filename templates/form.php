@@ -1,9 +1,12 @@
+<?php if (!isset($subject)) {
+    $subject = "";
+}?>
 <div id="postform" class="infobox">
 <form method="POST" action="submit.php">
     <table>
     <tr><td class="tableEntry"><strong>Name (opt.)</strong></td><td><br><input type="text" size="25" maxlength="25" name="name"><br></td></tr>
     <tr><td class="tableEntry"><strong>Tripcode (opt.)</strong></td><td><br><input type="text" size="25" maxlength="25" name="trip"><br></td></tr>
-    <tr><td class="tableEntry"><strong>Subject</strong></td><td><br><input type="text" size="35" maxlength="35" name="subject"><br></td></tr>
+    <tr><td class="tableEntry"><strong>Subject</strong></td><td><br><input type="text" size="35" maxlength="35" name="subject" value="<?php echo $subject; ?>"><br></td></tr>
     <tr><td class="tableEntry"><strong>Body</strong></td><td><br><textarea rows="10" cols="50" name="body"></textarea><br></td></tr>
     </table>
     <select name="board">

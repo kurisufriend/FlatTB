@@ -7,6 +7,7 @@ if (!is_dir("content/" . $board . "/" . $thread)) {
     echo "Invalid Parameters";
     die();
 }
+$info = array_map("str_getcsv", file("content/" . $board . "/" . $thread . "/threadinfo.csv"));
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,8 +17,11 @@ if (!is_dir("content/" . $board . "/" . $thread)) {
 </head>
 <body>
 <?php include_once "templates/header.php"; ?>
+<div id="collapsible-container">
+<div id="button-collapsible"><a id="button-collapsible-link" onclick="collapse();"href ="#">[REPLY]</a></div>
+<div id="form-collapsible"><?php $subject = rawurldecode($info[0][1]);include_once "templates/form.php"; ?></div>
+</div>
 <?php
-$info = array_map("str_getcsv", file("content/" . $board . "/" . $thread . "/threadinfo.csv"));
 foreach ($info as $posts) {
     $posts[6] = csv_decode($posts[6]);
     $posts[2] = csv_decode($posts[2]);

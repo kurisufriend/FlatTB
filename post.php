@@ -5,6 +5,6 @@
 </head>
 <body>
 <?php include_once "templates/header.php"; ?>
-<?php include_once "templates/form.php"; ?>
+<div id="page-center"><?php include_once "templates/form.php"; ?></div>
 </body>
 </html>

@@ -36,7 +36,7 @@ a {
     outline-style: auto;
     outline-color: rgb(27, 27, 27);
 }
-#postform {
+#page-center #postform {
     /*text-align: center;*/
     margin: 0;
     position: absolute;
@@ -114,4 +114,7 @@ a {
 }
 .roll {
     color: red;
+}
+#form-collapsible {
+    display: none;
 }
