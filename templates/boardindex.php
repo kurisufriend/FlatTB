@@ -27,7 +27,8 @@ foreach ($catalog as $post) {
     }
     $post[2] = csv_decode($post[2]);
     $post[1] = rawurldecode($post[1]);
-    echo "<tr><div class='catalogbox'><td>" . $post[1] . "</td><td>" . $post[2] . "</td><td>" . $post[3] . "</td></div></tr>";
+    $link = $root . "view.php?board=" . $board . "&" . "thread=" . urlencode(rawurlencode($post[2])); // shit temp fix
+    echo "<tr><div class='catalogbox'><td>" . $post[1] . "</td><td><a href='" . $link . "'>" . $post[2] . "</a></td><td>" . $post[3] . "</td></div></tr>";
     $i++;
 }
 ?>
