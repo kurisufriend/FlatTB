@@ -22,6 +22,11 @@ div.post.reply.highlighted {
 #post a {
 	color: navy;
 }
+#post {
+	background-color: #f0e0d6;
+	padding: 10px;
+	margin: 5px;
+}
 .intro span.subject {
 	color: #d00;
 }
@@ -73,4 +78,23 @@ table.modlog tr th {
 }
 #header-subject {
     font-weight: normal;
+}
+#form-collapsible {
+	display: none;
+}
+#button-collapsible {
+	text-align: center;
+	font-size: 30px;
+}
+#report {
+	padding: 2px;
+}
+#header-motd {
+	display: none;
+}
+#header-banner {
+	display: none;
+}
+#header h1 {
+	text-align: center;
 }
