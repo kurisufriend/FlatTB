@@ -1,4 +1,3 @@
 # ignore threads
 *
 !.gitignore
-!globalcatalog.csv
