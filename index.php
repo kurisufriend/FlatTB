@@ -25,7 +25,7 @@ foreach ($boards as $lines) {
 <b>Catalog:</b><br><?php include "templates/catalog.php";?>
             </div>
             <div id="latest" class="infobox">
-<b>Latest Post:</b><br><?php $root = file_get_contents("data/latest");echo csv_decode($root);?>
+<b>Latest Post:</b><br><?php $root = file_get_contents("content/latest");echo csv_decode($root);?>
             </div>
         </div>
     </body>

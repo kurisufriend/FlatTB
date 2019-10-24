@@ -86,7 +86,7 @@ else {
     file_put_contents("content/" . $board . "/" . $subject . "/threadinfo.csv","reply," . $subject . "," . $name . "," . $tripcode . "," . $timestamp . "," . $postid . "," . $body . "\n", FILE_APPEND);
 }
 // update latest
-file_put_contents("data/latest", $latest);
+file_put_contents("content/latest", $latest);
 // update catalog
 increment_postid();
 // redirect to thread and die
