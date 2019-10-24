@@ -1,5 +1,5 @@
 <?php
-$catalog = array_map("str_getcsv", file("data/globalcatalog.csv"));
+$catalog = array_map("str_getcsv", file("content/globalcatalog.csv"));
 include_once "data/config.php";
 if (!empty($catalog)) {
     echo "<table><tr><th>Board</th><th>Post</th><th>Time</th></tr>";
