@@ -2,9 +2,9 @@
 
 function collapse() {
     var inner = document.getElementById("form-collapsible");
-    if (inner.style.display != "none") {
-        inner.style.display = "none";
-    } else {
+    if (inner.style.display != "block") {
         inner.style.display = "block";
+    } else {
+        inner.style.display = "none";
     }
 }
