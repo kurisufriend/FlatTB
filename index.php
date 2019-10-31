@@ -19,13 +19,13 @@ foreach ($boards as $lines) {
 <?php include "templates/header.php"; ?><br>
         <div id="main-container">
             <div id="boards" class="infobox">
-<b>Boards:</b><br><?php include "templates/boards.php"; ?>
+<b><div class="infobox-header">Boards:</div></b><br><?php include "templates/boards.php"; ?>
             </div>
             <div id="catalog" class="infobox">
-<b>Catalog:</b><br><?php include "templates/catalog.php";?>
+<b><div class="infobox-header">Catalog:</div></b><br><?php include "templates/catalog.php";?>
             </div>
             <div id="latest" class="infobox">
-<b>Latest Post:</b><br><?php $root = file_get_contents("content/latest");echo csv_decode($root);?>
+<b><div class="infobox-header">Latest Post:</div></b><br><?php $root = file_get_contents("content/latest");echo csv_decode($root);?>
             </div>
         </div>
     </body>

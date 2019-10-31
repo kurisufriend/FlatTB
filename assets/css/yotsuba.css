@@ -98,3 +98,19 @@ table.modlog tr th {
 #header h1 {
 	text-align: center;
 }
+.infobox {
+	background-color: white;
+	margin: 5px;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	width: 57.69em;
+	margin-left: auto;
+	margin-right: auto;
+}
+.infobox-header {
+	background-color: rgb(255, 204, 170);
+	width: 100%;
+	font-size: 131%;
+	font-weight: 700;
+}
