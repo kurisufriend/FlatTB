@@ -43,5 +43,6 @@ foreach ($info as $posts) {
     }
 }
 ?>
+<?php include "templates/footer.php"; ?>
 </body>
 </html>

@@ -6,6 +6,7 @@ foreach ($boards as $lines) {
     if ($req == "/" . $lines[0] or $req == "/" . $lines[0] . "/") {
         $board = $lines[0];
         include_once "templates/boardindex.php";
+        include "templates/footer.php";
         die();
     }
 }
@@ -29,4 +30,5 @@ foreach ($boards as $lines) {
             </div>
         </div>
     </body>
+    <?php include "templates/footer.php"; ?>
 </html>

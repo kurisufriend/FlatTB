@@ -118,3 +118,8 @@ a {
 #form-collapsible {
     display: none;
 }
+#footer {
+    position: fixed;
+    bottom: 0%;
+    float: left;
+}
