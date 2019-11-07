@@ -1,7 +1,7 @@
 // pardon my javascript
 
-function collapse() {
-    var inner = document.getElementById("form-collapsible");
+function collapse(element) {
+    let inner = document.getElementById(element);
     if (inner.style.display != "block") {
         inner.style.display = "block";
     } else {
