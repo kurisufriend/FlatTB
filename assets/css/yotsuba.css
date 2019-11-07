@@ -98,6 +98,10 @@ table.modlog tr th {
 #header h1 {
 	text-align: center;
 }
+#header a {
+	text-decoration: none;
+	color: #800000;
+}
 .infobox {
 	background-color: white;
 	margin: 5px;
