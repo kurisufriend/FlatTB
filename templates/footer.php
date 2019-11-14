@@ -10,7 +10,7 @@ if (isset($_POST['CSSselect'])) {
 <div id="footer">
 <select name="CSSselect">
 <option value="main">FlatTB</option>
-<option value="yotsuba">Youtuba Bad</option>
+<option value="yotsuba">Yotsuba Bad</option>
 </select>
 <input type="submit" value="change">
 </div>
